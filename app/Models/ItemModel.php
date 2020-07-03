@@ -14,6 +14,7 @@ class ItemModel{
  public static function save($data){
      $new_item = DB::table('items')->insert($data);
      return $new_item;
+
  }
 
 }

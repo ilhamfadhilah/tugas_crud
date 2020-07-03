@@ -25,4 +25,10 @@ Route::get('/data_tables',function(){
     return view('items.data_tables');
 });
 
+Route::get('/items/', 'ItemController@index');
+
+Route::get('/items/create', 'ItemController@create');
+
+Route::post('/items', 'ItemController@store');
+
 ?>
