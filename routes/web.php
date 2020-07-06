@@ -24,11 +24,12 @@ Route::get('/', function () {
 Route::get('/data_tables',function(){
     return view('items.data_tables');
 });
-
-Route::get('/items/', 'ItemController@index');
-
-Route::get('/items/create', 'ItemController@create');
-
-Route::post('/items', 'ItemController@store');
+Route::get('/items/create', 'ItemController@create'); //menampilkan halaman form
+Route::post('/items', 'ItemController@store'); // menyimpan data
+Route::get('/items/', 'ItemController@index'); // menampilkan semua
+Route::get('/items/{id}', 'ItemController@show'); // menampilkan detail item dengan id
+Route::get('/items/{id}/edit','ItemController@edit'); //menampilkan form untuk edit items
+Route::put('/items/{id}','ItemController@update'); //menyimpan perubahan dari edit
+Route::delete('/items/{id}','ItemController@destroy'); //menghapus data dengan id
 
 ?>
